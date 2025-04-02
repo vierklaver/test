@@ -1,0 +1,232 @@
+/* Standaard thema */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --button-bg: #007bff;
+    --button-text: white;
+    --border-color: #ddd;
+}
+
+/* Donker thema */
+body.dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --button-bg: #444;
+    --button-text: white;
+    --border-color: #555;
+}
+
+/* Algemene styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 40px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1, h2, h5, p, .titel, .subtitel, .voortgang {
+    color: var(--text-color);
+  }
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: var(--bg-color);
+}
+
+/* Stappen verbergen behalve de actieve */
+.stap {
+    display: none;
+}
+
+.stap.active {
+    display: block;
+}
+
+/* Media styling */
+.media {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+/* Knoppen styling */
+.btn {
+    padding: 10px 20px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Thema-knop */
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* index */
+.index-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.img-small { max-width: 350px; }
+.img-medium { max-width: 600px; }
+.img-large { max-width: 800px; }
+
+.tegel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.tegel {
+    display: block;
+    width: 200px;
+    height: 120px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.tegel:hover {
+    background-color: #0056b3;
+}
+
+/* Algemene opmaak */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.tegel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Moderne tegelstijl */
+.tegel.modern {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 180px;
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.tegel.modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    background-color: #f0f4ff;
+}
+
+.tegel .icoon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.tegel .titel {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tegel .subtitel {
+    font-size: 14px;
+    color: #666;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    padding: 15px 0;
+  }
+  
+  .voortgang {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .voortgang-balk {
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  #voortgang-vulling {
+    background-color: var(--button-bg);
+    height: 10px;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+  
