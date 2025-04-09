@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisselwijzer</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<button class="index-button" onclick="terug()">Terug naar overzicht</button>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Wissel Thema</button>
+
+<div class="container wissel-container">
+    <div class="wissel-flow active" id="vraag1">
+      <h2>Heb je een collega gevonden om te wisselen?</h2>
+      <div class="keuzes">
+        <button class="btn groot" onclick="verwerkAntwoord('collega-ja')">Ja</button>
+        <button class="btn groot" onclick="verwerkAntwoord('collega-nee')">Neen</button>
+      </div>
+    </div>
+  
+    <div class="wissel-flow" id="vraag2">
+      <h2>Wissel je binnen dezelfde dag?</h2>
+      <div class="keuzes">
+        <button class="btn groot" onclick="verwerkAntwoord('samendag-ja')">Ja</button>
+        <button class="btn groot" onclick="verwerkAntwoord('samendag-nee')">Neen</button>
+      </div>
+      <button class="btn klein" onclick="terugNaarVraag1()">← Terug</button>
+    </div>
+  </div>
+
+  
+<script src="../script.js"></script>
+
+</body>
+</html>
+  

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opmerkingen plaatsen</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<button class="index-button" onclick="terug()">Terug naar overzicht</button>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Wissel Thema</button>
+
+
+
+<div class="container">
+
+    <div class="voortgang">
+        <div id="voortgang-tekst"></div>
+        <div class="voortgang-balk">
+          <div id="voortgang-vulling"></div>
+        </div>
+      </div>  
+
+    <!-- Stap 1 -->
+    <div class="stap active" id="stap1">
+        <h5>Klik op 'Mijn Planning'</h5>
+        <img src="../media/mijnplan.png" class="media img-small" alt="Stap 1 Screenshot">
+        <!-- <p>Klik op de login-knop en voer je gebruikersnaam en wachtwoord in.</p> -->
+    </div>
+
+    <!-- Stap 2 -->
+    <!-- <div class="stap" id="stap2">
+        <h5>Zorg dat de datum correct staat</h5>
+        <video class="media" controls>
+            <source src="../media/dataselect.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <!-- <p>Ga naar het menu en klik op 'Instellingen' om je voorkeuren te wijzigen.</p> -->
+    </div> -->
+
+    <!-- Stap 3 -->
+    <!-- <div class="stap" id="stap3">
+        <h5>Druk op het potlood icoon</h5>
+        <video class="media" controls>
+            <source src="../media/potselect2.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <!-- <p>Vul het formulier in en klik op 'Opslaan' om verder te gaan.</p> -->
+    </div> -->
+
+    <!-- Stap 4 -->
+    <!-- <div class="stap" id="stap4">
+        <h5>Schrijf een opmerking en sla deze op</h5>
+        <video class="media" controls>
+            <source src="../media/opmerking.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <p>Opmerkingen kunnen tot 5 dagen in het verleden toegevoegd worden</p>
+    </div> -->
+
+    <!-- Navigatieknoppen -->
+    <button id="vorigeBtn" class="btn" onclick="vorigeStap()" disabled>Vorige</button>
+    <button id="volgendeBtn" class="btn" onclick="volgendeStap()">Volgende</button>
+    
+</div>
+<div class="reset">
+    <button class="btn" onclick="resetHandleiding()">Herstart</button>
+</div>
+
+
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>

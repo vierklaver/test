@@ -47,7 +47,7 @@ function vorigeStap() {
     }
 }
 
-// 🌙 Thema-wissel
+// Thema-wissel
 function toggleTheme() {
     document.body.classList.toggle("dark-theme");
     const isDark = document.body.classList.contains("dark-theme");
@@ -55,7 +55,7 @@ function toggleTheme() {
     document.querySelector(".theme-toggle").innerText = isDark ? "☀️ Licht Thema" : "🌙 Donker Thema";
 }
 
-// ✅ Bij laden van de pagina
+// Bij laden van de pagina
 window.onload = function () {
     // Laad thema
     if (localStorage.getItem("theme") === "dark") {
@@ -82,3 +82,32 @@ function terugNaarIndex() {
     window.location.href = "../index.html";
 }
 
+function verwerkAntwoord(antwoord) {
+    // Verberg alle vragen eerst
+    document.querySelectorAll('.wissel-flow').forEach(div => {
+      div.classList.remove('active');
+    });
+  
+    // Toon juiste vraag of navigeer
+    switch (antwoord) {
+      case 'collega-ja':
+        document.getElementById("vraag2").classList.add("active");
+        break;
+      case 'collega-nee':
+        window.location.href = "wisselsysteem.html";
+        break;
+      case 'samendag-ja':
+        window.location.href = "wisseldag.html";
+        break;
+      case 'samendag-nee':
+        window.location.href = "wisseladag.html";
+        break;
+    }
+  }
+  
+  function terugNaarVraag1() {
+    document.querySelectorAll('.wissel-flow').forEach(div => {
+      div.classList.remove('active');
+    });
+    document.getElementById("vraag1").classList.add("active");
+  }
