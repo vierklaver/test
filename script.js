@@ -111,3 +111,14 @@ function verwerkAntwoord(antwoord) {
     });
     document.getElementById("vraag1").classList.add("active");
   }
+
+// Zoekfunctie
+function filterOnderwerpen() {
+  const input = document.getElementById("zoekveld").value.toLowerCase();
+  const tegels = document.querySelectorAll(".tegel");
+
+  tegels.forEach(tegel => {
+    const tekst = tegel.innerText.toLowerCase();
+    tegel.style.display = tekst.includes(input) ? "flex" : "none";
+  });
+}

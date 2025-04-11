@@ -2,18 +2,26 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>PlanPoint Handleiding</title>
+  <title>Planpoint Handleiding</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <header>
-    <h1>🗓️ PlanPoint</h1>
-    <p>Kies een onderwerp:</p>
+    <h1>🗓️ Planpoint</h1>
+    <!-- <p>Kies een onderwerp:</p> -->
   </header>
+
+<input type="text" id="zoekveld" placeholder="Zoek een onderwerp..." onkeyup="filterOnderwerpen()" />
 
   <button class="index-button" onclick="terugNaarIndex()">Terug naar startpagina</button>
 
   <main class="tegel-container">
+    <a href="inloggen.html" class="tegel modern">
+      <div class="icoon">🕖</div>
+      <div class="titel">Inloggen</div>
+      <div class="subtitel">Uitleg over inloggen op Planpoint</div>
+    </a>
+
     <a href="opmerking.html" class="tegel modern">
       <div class="icoon">📝</div>
       <div class="titel">Opmerkingen</div>
@@ -26,7 +34,7 @@
       <div class="subtitel">Uitleg over het aanmaken en wijzigen van uw PIN code</div>
     </a>
 
-    <a href="wisselvragen.html" class="tegel modern">
+    <a href="wisselindex.html" class="tegel modern">
       <div class="icoon">🔄</div>
       <div class="titel">Wissel</div>
       <div class="subtitel">Uitleg over het wisselen van diensten</div>

@@ -22,53 +22,79 @@
         </div>
       </div>  
 
-    <!-- Stap 1 -->
-    <div class="stap active" id="stap1">
-        <h5>Klik op 'Mijn Registraties'</h5>
-        <img src="../media/mijnreg.png" class="media img-small" alt="Stap 1 Screenshot">
+     <div class="stap" id="stap1">
+        <h5>Surf naar https://vierklaver.dehora.be</h5>
+        <video class="media" controls>
+            <source src="../media/url.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <p>Dit kan ook via beheerde favorieten of klik <a href="https://vierklaver.dehora.be" target="_blank">hier</a></p>
+    </div>
+
+    <div class="stap active" id="stap2">
+        <h5>Vul uw gebruikersnaam in</h5>
+        <video class="media" controls>
+            <source src="../media/naam.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <p>Dit is uw naam.familienaam</p>
+    </div>
+
+    <div class="stap active" id="stap3">
+        <h5>Vul het wachtwoord in</h5>
+        <video class="media" controls>
+            <source src="../media/wachtwoord.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <p>Het standaard wachtwoord is "vierklaver"</p>
+    </div>
+
+    <div class="stap active" id="stap4">
+        <h5>Klik op 'aanmelden'</h5>
+        <img src="../media/aanmelden.png" class="media img-small" alt="Stap 1 Screenshot">
         <!-- <p>Klik op de login-knop en voer je gebruikersnaam en wachtwoord in.</p> -->
-    </div>
-
-    <!-- Stap 2 -->
-    <div class="stap" id="stap2">
-        <h5>Zorg dat de datum correct staat</h5>
-        <video class="media" controls>
-            <source src="../media/dataselect.mp4" type="video/mp4">
-            Je browser ondersteunt geen video.
-        </video>
-        <!-- <p>Ga naar het menu en klik op 'Instellingen' om je voorkeuren te wijzigen.</p> -->
-    </div>
-
-    <!-- Stap 3 -->
-    <div class="stap" id="stap3">
-        <h5>Druk op het potlood icoon</h5>
-        <video class="media" controls>
-            <source src="../media/potselect2.mp4" type="video/mp4">
-            Je browser ondersteunt geen video.
-        </video>
-        <!-- <p>Vul het formulier in en klik op 'Opslaan' om verder te gaan.</p> -->
-    </div>
-
-    <!-- Stap 4 -->
-    <div class="stap" id="stap4">
-        <h5>Schrijf een opmerking en sla deze op</h5>
-        <video class="media" controls>
-            <source src="../media/opmerking.mp4" type="video/mp4">
-            Je browser ondersteunt geen video.
-        </video>
-        <p>Opmerkingen kunnen tot 5 dagen in het verleden toegevoegd worden</p>
     </div>
 
     <div class="stap" id="stap5">
         <div class="succes-bericht">
-            <h2>✅ De opmerking is opgeslagen</h2>
-            <!-- <p></p> -->
+            <h2>✅ Je bent nu ingelogd</h2>
+            <p>Planpoint vraagt om uw wachtwoord te wijzigen na de eerste login</p>
             <div class="actie-knoppen">
                 <a href="index.html" class="btn">Terug naar startpagina</a>
                 <a href="#" onclick="resetHandleiding()" class="btn">Opnieuw bekijken</a>
             </div>
         </div>
     </div>
+    
+
+    <!-- Stap 2
+    <div class="stap" id="stap2">
+        <h5>Zorg dat de datum correct staat</h5>
+        <video class="media" controls>
+            <source src="../media/dataselect.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <!- Stap 3 -->
+    <!-- <div class="stap" id="stap3">
+        <h5>Druk op het potlood icoon</h5>
+        <video class="media" controls>
+            <source src="../media/potselect2.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video> -->
+        <!-- <p>Vul het formulier in en klik op 'Opslaan' om verder te gaan.</p> -->
+    <!-- </div> -->
+
+    <!-- Stap 4 -->
+    <!-- <div class="stap" id="stap4">
+        <h5>Schrijf een opmerking en sla deze op</h5>
+        <video class="media" controls>
+            <source src="../media/opmerking.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <p>Opmerkingen kunnen tot 5 dagen in het verleden toegevoegd worden</p>
+    </div> --> 
 
     <!-- Navigatieknoppen -->
     <button id="vorigeBtn" class="btn" onclick="vorigeStap()" disabled>Vorige</button>
@@ -78,8 +104,6 @@
 <div class="reset">
     <button class="btn" onclick="resetHandleiding()">Herstart</button>
 </div>
-
-
 
 
 <script src="../script.js"></script>

@@ -214,6 +214,8 @@ body {
     margin: 0 auto 20px;
     text-align: left;
     font-size: 14px;
+    font-style: oblique;
+    font-weight: bold;
   }
   
   .voortgang-balk {
@@ -265,8 +267,8 @@ body {
   
   /* ===== Grote knopstijl (antwoordopties) ===== */
   .btn.groot {
-    font-size: 18px;
-    padding: 15px 30px;
+    font-size: 15px;
+    padding: 8px 30px;
     background-color: var(--button-bg);
     color: var(--button-text);
     border-radius: 8px;
@@ -319,4 +321,47 @@ body {
       margin: 10px auto;
     }
   }
-  
+
+/* zoekfunctie */
+#zoekveld {
+  width: 100%;
+  max-width: 400px;
+  padding: 5px;
+  margin: 10px auto;
+  display: block;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* succesbericht */
+.succes-bericht {
+  background-color: #e6f9f0;
+  border: 2px solid #4caf50;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.succes-bericht h2 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.succes-bericht .actie-knoppen a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.succes-bericht .actie-knoppen a:hover {
+  background-color: #388e3c;
+}
