@@ -463,7 +463,7 @@ body.dark-theme .regelblok {
   opacity: 1;
 }
 
-.toggle-video-btn {
+/* .toggle-video-btn {
   background-color: transparent;
   color: var(--text-color);
   border: 1px solid var(--border-color);
@@ -490,6 +490,35 @@ body.dark-theme .regelblok {
 
 .collapse-video.active {
   max-height: 1000px;
+  opacity: 1;
+} */
+
+.toggle-video-btn {
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.toggle-video-btn:hover {
+  background-color: var(--button-bg);
+  color: white;
+}
+
+.collapse-video {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  margin-top: 10px;
+}
+
+.collapse-video.active {
+  max-height: 1000px; /* groot genoeg voor video */
   opacity: 1;
 }
 

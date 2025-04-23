@@ -6,7 +6,7 @@
     <title>Wissel zoeken in het systeem</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body id="wisselsysteem">
 
 <button class="index-button" onclick="terug()">Terug naar overzicht</button>
 <button class="theme-toggle" onclick="toggleTheme()">🌙 Wissel Thema</button>
@@ -25,41 +25,54 @@
     <!-- Stap 1 -->
     <div class="stap active" id="stap1">
         <h5>Klik op 'Mijn Planning'</h5>
-        <img src="../media/mijnplan.png" class="media img-small" alt="Stap 1 Screenshot">
-        <!-- <p>Klik op de login-knop en voer je gebruikersnaam en wachtwoord in.</p> -->
+        <div>
+        <img src="../media/mijnplan.png" class="media img-minimum" alt="Stap 1 Screenshot">
+        </div>
+        <button id="videoToggleBtn" class="btn toggle-video-btn" onclick="toggleVideo()">▶ Meer uitleg</button>
+        <div id="videoContainer" class="collapse-video">
+            <video class="media" controls>
+                <source src="../media/mijn_planning.mp4" type="video/mp4">
+                Je browser ondersteunt geen video.
+            </video>
+        </div>
     </div>
 
-    <!-- Stap 2 -->
-    <!-- <div class="stap" id="stap2">
-        <h5>Zorg dat de datum correct staat</h5>
+ 
+    <div class="stap" id="stap2">
+        <h5>Pas de maand aan</h5>
         <video class="media" controls>
-            <source src="../media/dataselect.mp4" type="video/mp4">
+            <source src="../media/ruildata.mp4" type="video/mp4">
             Je browser ondersteunt geen video.
         </video>
-        <!-- <p>Ga naar het menu en klik op 'Instellingen' om je voorkeuren te wijzigen.</p> -->
-    </div> -->
+    </div>
 
-    <!-- Stap 3 -->
-    <!-- <div class="stap" id="stap3">
-        <h5>Druk op het potlood icoon</h5>
+    <div class="stap" id="stap3">
+        <h5>Klik de dienst aan en selecteer het ruilicoon</h5>
         <video class="media" controls>
-            <source src="../media/potselect2.mp4" type="video/mp4">
+            <source src="../media/ruildagselect.mp4" type="video/mp4">
             Je browser ondersteunt geen video.
         </video>
-        <!-- <p>Vul het formulier in en klik op 'Opslaan' om verder te gaan.</p> -->
-    </div> -->
+    </div>
 
-    <!-- Stap 4 -->
-    <!-- <div class="stap" id="stap4">
-        <h5>Schrijf een opmerking en sla deze op</h5>
+    <div class="stap" id="stap4">
+        <h5>Door op vernieuwen te klikken zoekt Planpoint de geschikte personen</h5>
         <video class="media" controls>
-            <source src="../media/opmerking.mp4" type="video/mp4">
+            <source src="../media/ruilpsearch.mp4" type="video/mp4">
             Je browser ondersteunt geen video.
         </video>
-        <p>Opmerkingen kunnen tot 5 dagen in het verleden toegevoegd worden</p>
-    </div> -->
+    </div>
 
-    <!-- Navigatieknoppen -->
+    <div class="stap" id="stap5">
+        <div class="succes-bericht">
+            <h4>Je kan aan de slag met deze lijst</h4>
+            <p>Het blijft uiteraard van belang om de betrokken personen aan te spreken</p>
+            <div class="actie-knoppen">
+                <a href="index.html" class="btn">Terug naar startpagina</a>
+                <a href="#" onclick="resetHandleiding()" class="btn">Opnieuw bekijken</a>
+            </div>
+        </div>
+    </div>
+
     <button id="vorigeBtn" class="btn" onclick="vorigeStap()" disabled>Vorige</button>
     <button id="volgendeBtn" class="btn" onclick="volgendeStap()">Volgende</button>
     

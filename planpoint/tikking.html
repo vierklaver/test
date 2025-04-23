@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tikking ingeven</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<button class="index-button" onclick="terug()">Terug naar overzicht</button>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Wissel Thema</button>
+
+
+
+<div class="container collapse tooltip" id="regelcontainer">
+    <div class="regelblok">
+        <h4>Belangrijke informatie</h4>
+        <div class="regel-lijst">
+          <p>Bij voorkeur registreren we via de kiosk.</p>
+          <p>Indien dit niet mogelijk is registreren we via de smartphone of website.</p>
+          <p>Manuele regisraties zullen steeds gevalideerd worden door een teamcoach.</p>
+          <!-- <p>Bij problemen neem je contact op met uw teamcoach</p> -->
+        </div>
+        <button class="btn" onclick="verbergIntro()">Ik begrijp het</button>
+      </div>
+</div>
+
+<div class="container" id="stappencontainer" style="display: none;">
+    <div class="voortgang">
+        <div id="voortgang-tekst"></div>
+        <div class="voortgang-balk">
+          <div id="voortgang-vulling"></div>
+        </div>
+    </div>
+
+    <!-- Stap 1 -->
+    <div class="stap active" id="stap1">
+        <h5>Klik op 'Mijn Registraties'</h5>
+        <div>
+          <img src="../media/mijnreg.png" class="media img-minimum" alt="Stap 1 Screenshot">
+        </div>
+        <button class="btn toggle-video-btn" onclick="toggleVideo(this)">▶ Meer uitleg</button>
+        <div class="collapse-video">
+          <video class="media" controls>
+            <source src="../media/mijn_reg.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+          </video>
+        </div>
+      </div>
+  
+
+    <!-- Stap 2 -->
+    <div class="stap" id="stap2">
+        <h5>Zorg dat de datum correct staat</h5>
+        <video class="media" controls>
+            <source src="../media/tikkingdata.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <!-- Stap 3 -->
+    <div class="stap" id="stap3">
+        <h5>Druk op het potlood icoon van de te wijzigen dag</h5>
+        <video class="media" controls>
+            <source src="../media/tikkingdag.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <!-- Stap 4 -->
+    <div class="stap" id="stap4">
+        <h5>Maak een nieuwe tikking aan</h5>
+        <video class="media" controls>
+            <source src="../media/tikkingnieuw.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <div class="stap" id="stap5">
+        <h5>Geef het uur van start of stop in</h5>
+        <video class="media" controls>
+            <source src="../media/tikkinginput.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <p>Denk ook aan het vervoersmiddel</p>
+    </div>
+
+    <div class="stap" id="stap6">
+        <h5>Klik op opslaan</h5>
+        <div>
+          <img src="../media/opslaan.png" class="media img-minimum" alt="Stap 1 Screenshot">
+        </div>
+        <button class="btn toggle-video-btn" onclick="toggleVideo(this)">▶ Meer uitleg</button>
+        <div class="collapse-video">
+          <video class="media" controls>
+            <source src="../media/tikkingsave.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+          </video>
+        </div>
+        <p>Je kan ook kiezen voor opslaan en sluiten</p>
+      </div>
+
+    <div class="stap" id="stap7">
+        <h5>Sluit het venster</h5>
+        <video class="media" controls>
+            <source src="../media/tikkingclose.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <div class="stap" id="stap8">
+        <div class="succes-bericht">
+            <h2>Uw tikking werd geregistreerd</h2>
+            <!-- <p></p> -->
+            <div class="actie-knoppen">
+                <a href="index.html" class="btn">Terug naar startpagina</a>
+                <a href="#" onclick="resetHandleiding()" class="btn">Opnieuw bekijken</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigatieknoppen -->
+    <button id="vorigeBtn" class="btn" onclick="vorigeStap()" disabled>Vorige</button>
+    <button id="volgendeBtn" class="btn" onclick="volgendeStap()">Volgende</button>
+    </div>
+
+<div class="reset">
+    <button class="btn" onclick="resetHandleiding()">Herstart</button>
+</div>
+
+<script src="../script.js"></script>
+
+</body>
+</html>

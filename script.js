@@ -1,46 +1,42 @@
-let huidigeStap = 1; // standaardwaarde
-// const totaalStappen = document.querySelectorAll('.stap').length;
+// Unieke sleutel per pagina op basis van body-id
+const handleidingID = document.body.id || "default";
+const stapKey = `huidigeStap-${handleidingID}`;
 
-//Laad bewaarde stap (indien aanwezig)
-if (localStorage.getItem('huidigeStap')) {
-    huidigeStap = parseInt(localStorage.getItem('huidigeStap'));
+let huidigeStap = 1;
+
+// Laad bewaarde stap (indien aanwezig en geldig)
+if (localStorage.getItem(stapKey)) {
+    const opgeslagenStap = parseInt(localStorage.getItem(stapKey));
+    const maxStappen = document.querySelectorAll('#stappencontainer .stap').length;
+    if (opgeslagenStap > 0 && opgeslagenStap <= maxStappen) {
+        huidigeStap = opgeslagenStap;
+    }
 }
 
-//Toon juiste stap
+// Toon juiste stap
 function updateStap() {
-    // Verberg alle stappen
     const stappen = document.querySelectorAll('#stappencontainer .stap');
     const totaalStappen = stappen.length;
-  
+
     stappen.forEach((stap, index) => {
-      stap.classList.remove("active");
-      if (index === huidigeStap - 1) {
-        stap.classList.add("active");
-      }
+        stap.classList.remove("active");
+        if (index === huidigeStap - 1) {
+            stap.classList.add("active");
+        }
     });
 
-    // document.querySelectorAll('.stap').forEach((stap) => {
-    //     stap.classList.remove("active");
-    // });
-
-    // //Toon de juiste stap
-    // document.getElementById(`stap${huidigeStap}`).classList.add("active");
-
-    //Schakel knoppen in of uit
     document.getElementById("vorigeBtn").disabled = (huidigeStap === 1);
     document.getElementById("volgendeBtn").disabled = (huidigeStap === totaalStappen);
 
-    //Bewaar huidige stap
-    localStorage.setItem('huidigeStap', huidigeStap);
+    // Bewaar huidige stap met unieke sleutel
+    localStorage.setItem(stapKey, huidigeStap);
 
-      //Update voortgangstekst en balk
-  const voortgangTekst = document.getElementById("voortgang-tekst");
-  const voortgangVulling = document.getElementById("voortgang-vulling");
-  voortgangTekst.textContent = `Stap ${huidigeStap} van ${totaalStappen}`;
+    const voortgangTekst = document.getElementById("voortgang-tekst");
+    const voortgangVulling = document.getElementById("voortgang-vulling");
+    voortgangTekst.textContent = `Stap ${huidigeStap} van ${totaalStappen}`;
 
-  const percentage = (huidigeStap / totaalStappen) * 100;
-  voortgangVulling.style.width = `${percentage}%`;
-
+    const percentage = (huidigeStap / totaalStappen) * 100;
+    voortgangVulling.style.width = `${percentage}%`;
 }
 
 function volgendeStap() {
@@ -57,6 +53,60 @@ function vorigeStap() {
         updateStap();
     }
 }
+
+
+// let huidigeStap = 1; // standaardwaarde
+// // const totaalStappen = document.querySelectorAll('.stap').length;
+
+// //Laad bewaarde stap (indien aanwezig)
+// if (localStorage.getItem('huidigeStap')) {
+//     huidigeStap = parseInt(localStorage.getItem('huidigeStap'));
+// }
+
+// //Toon juiste stap
+// function updateStap() {
+//     // Verberg alle stappen
+//     const stappen = document.querySelectorAll('#stappencontainer .stap');
+//     const totaalStappen = stappen.length;
+  
+//     stappen.forEach((stap, index) => {
+//       stap.classList.remove("active");
+//       if (index === huidigeStap - 1) {
+//         stap.classList.add("active");
+//       }
+//     });
+
+//     //Schakel knoppen in of uit
+//     document.getElementById("vorigeBtn").disabled = (huidigeStap === 1);
+//     document.getElementById("volgendeBtn").disabled = (huidigeStap === totaalStappen);
+
+//     //Bewaar huidige stap
+//     localStorage.setItem('huidigeStap', huidigeStap);
+
+//       //Update voortgangstekst en balk
+//   const voortgangTekst = document.getElementById("voortgang-tekst");
+//   const voortgangVulling = document.getElementById("voortgang-vulling");
+//   voortgangTekst.textContent = `Stap ${huidigeStap} van ${totaalStappen}`;
+
+//   const percentage = (huidigeStap / totaalStappen) * 100;
+//   voortgangVulling.style.width = `${percentage}%`;
+
+// }
+
+// function volgendeStap() {
+//     const stappen = document.querySelectorAll('#stappencontainer .stap');
+//     if (huidigeStap < stappen.length) {
+//         huidigeStap++;
+//         updateStap();
+//     }
+// }
+
+// function vorigeStap() {
+//     if (huidigeStap > 1) {
+//         huidigeStap--;
+//         updateStap();
+//     }
+// }
 
 // Thema-wissel
 function toggleTheme() {
@@ -77,20 +127,19 @@ window.onload = function () {
 };
 
 function resetHandleiding() {
-    huidigeStap = 1;
-    updateStap();
+  huidigeStap = 1;
+  localStorage.removeItem(stapKey); // Verwijdert enkel de huidige pagina-stap
+  updateStap();
 }
 
 function terug() {
-    // Optioneel: reset localStorage voor deze handleiding
-    localStorage.removeItem('huidigeStap');
-    window.location.href = "index.html";
+  localStorage.removeItem(stapKey);
+  window.location.href = "index.html";
 }
 
 function terugNaarIndex() {
-    // Optioneel: reset localStorage voor deze handleiding
-    localStorage.removeItem('huidigeStap');
-    window.location.href = "../index.html";
+  localStorage.removeItem(stapKey);
+  window.location.href = "../index.html";
 }
 
 function verwerkAntwoord(antwoord) {
@@ -135,9 +184,6 @@ function filterOnderwerpen() {
 }
 
 //regelblok
-// function verbergIntro() {
-//   document.getElementById("regelcontainer").style.display = "none";
-//   document.getElementById("stappencontainer").style.display = "block";
 
   function verbergIntro() {
     const intro = document.getElementById("regelcontainer");
@@ -160,16 +206,11 @@ function filterOnderwerpen() {
   // Als je werkt met voortgangsbalk:
   if (typeof updateStap === "function") updateStap();
 
-//togglevideo
-function toggleVideo() {
-  const container = document.getElementById("videoContainer");
-  const knop = document.getElementById("videoToggleBtn");
-
+function toggleVideo(button) {
+  const container = button.nextElementSibling;
   container.classList.toggle("active");
 
-  if (container.classList.contains("active")) {
-    knop.textContent = "✖ Sluiten";
-  } else {
-    knop.textContent = "▶ Meer uitleg";
-  }
+  button.textContent = container.classList.contains("active")
+    ? "✖ Sluiten"
+    : "▶ Meer uitleg";
 }

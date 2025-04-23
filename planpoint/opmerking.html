@@ -6,7 +6,7 @@
     <title>Opmerkingen plaatsen</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body id="opmerkingen">
 
 <button class="index-button" onclick="terug()">Terug naar overzicht</button>
 <button class="theme-toggle" onclick="toggleTheme()">🌙 Wissel Thema</button>
@@ -40,8 +40,8 @@
             <div>
             <img src="../media/mijnreg.png" class="media img-minimum" alt="Stap 1 Screenshot">
             </div>
-            <button id="videoToggleBtn" class="btn toggle-video-btn" onclick="toggleVideo()">▶ Meer uitleg</button>
-            <div id="videoContainer" class="collapse-video">
+            <button class="btn toggle-video-btn" onclick="toggleVideo(this)">▶ Meer uitleg</button>
+            <div class="collapse-video">
                 <video class="media" controls>
                     <source src="../media/mijn_reg.mp4" type="video/mp4">
                     Je browser ondersteunt geen video.
