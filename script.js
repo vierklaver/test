@@ -159,3 +159,17 @@ function filterOnderwerpen() {
 
   // Als je werkt met voortgangsbalk:
   if (typeof updateStap === "function") updateStap();
+
+//togglevideo
+function toggleVideo() {
+  const container = document.getElementById("videoContainer");
+  const knop = document.getElementById("videoToggleBtn");
+
+  container.classList.toggle("active");
+
+  if (container.classList.contains("active")) {
+    knop.textContent = "✖ Sluiten";
+  } else {
+    knop.textContent = "▶ Meer uitleg";
+  }
+}

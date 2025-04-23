@@ -15,14 +15,14 @@
 
 <div class="container collapse tooltip" id="regelcontainer">
     <div class="regelblok">
-        <h5>Belangrijke info voor je start:</h5>
+        <h4>Belangrijke informatie</h4>
         <div class="regel-lijst">
           <p>Je kan opmerkingen toevoegen tot 5 dagen in het verleden.</p>
           <p>Op het einde van de maand is dit beperkt tot 2 dagen.</p>
           <p>Het niet nemen van pauze vereist een opmerking op de dag zelf.</p>
           <!-- <p>Bij problemen neem je contact op met uw teamcoach</p> -->
         </div>
-        <button class="btn groot" onclick="verbergIntro()">Ik begrijp het</button>
+        <button class="btn" onclick="verbergIntro()">Ik begrijp het</button>
       </div>
 </div>
 
@@ -36,10 +36,19 @@
 
     <!-- Stap 1 -->
     <div class="stap active" id="stap1">
-        <h5>Klik op 'Mijn Registraties'</h5>
-        <img src="../media/mijnreg.png" class="media img-small" alt="Stap 1 Screenshot">
-        <!-- <p>Klik op de login-knop en voer je gebruikersnaam en wachtwoord in.</p> -->
+            <h5>Klik op 'Mijn Registraties'</h5>
+            <div>
+            <img src="../media/mijnreg.png" class="media img-minimum" alt="Stap 1 Screenshot">
+            </div>
+            <button id="videoToggleBtn" class="btn toggle-video-btn" onclick="toggleVideo()">▶ Meer uitleg</button>
+            <div id="videoContainer" class="collapse-video">
+                <video class="media" controls>
+                    <source src="../media/mijn_reg.mp4" type="video/mp4">
+                    Je browser ondersteunt geen video.
+                </video>
+            </div>
     </div>
+  
 
     <!-- Stap 2 -->
     <div class="stap" id="stap2">
