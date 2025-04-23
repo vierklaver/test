@@ -25,8 +25,16 @@
     <!-- Stap 1 -->
     <div class="stap active" id="stap1">
         <h5>Klik op 'Mijn Planning'</h5>
-        <img src="../media/mijnplan.png" class="media img-small" alt="Stap 1 Screenshot">
-        <!-- <p>Klik op de login-knop en voer je gebruikersnaam en wachtwoord in.</p> -->
+        <div>
+        <img src="../media/mijnplan.png" class="media img-minimum" alt="Stap 1 Screenshot">
+        </div>
+        <button id="videoToggleBtn" class="btn toggle-video-btn" onclick="toggleVideo()">▶ Meer uitleg</button>
+        <div id="videoContainer" class="collapse-video">
+            <video class="media" controls>
+                <source src="../media/mijn_planning.mp4" type="video/mp4">
+                Je browser ondersteunt geen video.
+            </video>
+        </div>
     </div>
 
        <!-- Stap 2 -->
