@@ -18,11 +18,15 @@ body.dark-theme {
 
 /* Algemene styling */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 40px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h5, p, .titel, .subtitel, .voortgang {
@@ -33,11 +37,26 @@ h1, h2, h5, p, .titel, .subtitel, .voortgang {
     max-width: 1200px;
     width: 90%;
     margin: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
     padding: 20px;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     background-color: var(--bg-color);
+}
+
+.stappencontainer {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: var(--bg-color);
 }
 
 /* Stappen verbergen behalve de actieve */
@@ -133,25 +152,25 @@ h1, h2, h5, p, .titel, .subtitel, .voortgang {
 }
 
 /* Algemene opmaak */
-body {
+/* body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f5f7fa;
     color: #333;
     margin: 0;
     padding: 20px;
     text-align: center;
-}
+} */
 
 header {
     margin-bottom: 40px;
 }
 
-.tegel-container {
+/* .tegel-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-}
+} */
 
 /* Moderne tegelstijl */
 .tegel.modern {
@@ -192,11 +211,11 @@ header {
     color: #666;
 }
 
-body {
+/* body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   main {
     flex: 1;
@@ -365,3 +384,112 @@ body {
 .succes-bericht .actie-knoppen a:hover {
   background-color: #388e3c;
 }
+
+.regelblok {
+  max-width: 500px;
+  margin: 10px auto 30px;
+  font-size: 14px;
+  background-color: #f0f4ff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: #333;
+  text-align: center;
+}
+
+.regel-lijst p {
+  margin: 8px 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body.dark-theme .regelblok {
+  background-color: #2a2e3a;
+  border-color: #555;
+  color: #ddd;
+}
+
+.container.collapse {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.container.collapse.hidden {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.collapse {
+  max-height: 500px; /* of een ruwe inschatting van de inhoud */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+  opacity: 1;
+}
+
+.collapse.hidden {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  top: 110%; /* boven het element */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* DEBUG OVERLAY – toon marges & paddings */
+/* * {
+  outline: 1px dashed rgba(0, 123, 255, 0.4);
+}
+
+.container,
+#regelcontainer,
+#stappencontainer,
+.voortgang,
+.stap,
+.regelblok {
+  position: relative;
+}
+
+.container::before,
+.voortgang::before,
+.stap::before,
+.regelblok::before {
+  content: attr(class);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: rgba(0, 123, 255, 0.1);
+  font-size: 10px;
+  color: #007bff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  z-index: 999;
+} */

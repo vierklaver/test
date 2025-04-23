@@ -1,29 +1,39 @@
 let huidigeStap = 1; // standaardwaarde
-const totaalStappen = document.querySelectorAll('.stap').length;
+// const totaalStappen = document.querySelectorAll('.stap').length;
 
-// 👇 Laad bewaarde stap (indien aanwezig)
+//Laad bewaarde stap (indien aanwezig)
 if (localStorage.getItem('huidigeStap')) {
     huidigeStap = parseInt(localStorage.getItem('huidigeStap'));
 }
 
-// 👉 Toon juiste stap
+//Toon juiste stap
 function updateStap() {
     // Verberg alle stappen
-    document.querySelectorAll('.stap').forEach((stap) => {
-        stap.classList.remove("active");
+    const stappen = document.querySelectorAll('#stappencontainer .stap');
+    const totaalStappen = stappen.length;
+  
+    stappen.forEach((stap, index) => {
+      stap.classList.remove("active");
+      if (index === huidigeStap - 1) {
+        stap.classList.add("active");
+      }
     });
 
-    // Toon de juiste stap
-    document.getElementById(`stap${huidigeStap}`).classList.add("active");
+    // document.querySelectorAll('.stap').forEach((stap) => {
+    //     stap.classList.remove("active");
+    // });
 
-    // Schakel knoppen in of uit
+    // //Toon de juiste stap
+    // document.getElementById(`stap${huidigeStap}`).classList.add("active");
+
+    //Schakel knoppen in of uit
     document.getElementById("vorigeBtn").disabled = (huidigeStap === 1);
     document.getElementById("volgendeBtn").disabled = (huidigeStap === totaalStappen);
 
-    // 💾 Bewaar huidige stap
+    //Bewaar huidige stap
     localStorage.setItem('huidigeStap', huidigeStap);
 
-      // Update voortgangstekst en balk
+      //Update voortgangstekst en balk
   const voortgangTekst = document.getElementById("voortgang-tekst");
   const voortgangVulling = document.getElementById("voortgang-vulling");
   voortgangTekst.textContent = `Stap ${huidigeStap} van ${totaalStappen}`;
@@ -34,7 +44,8 @@ function updateStap() {
 }
 
 function volgendeStap() {
-    if (huidigeStap < totaalStappen) {
+    const stappen = document.querySelectorAll('#stappencontainer .stap');
+    if (huidigeStap < stappen.length) {
         huidigeStap++;
         updateStap();
     }
@@ -122,3 +133,29 @@ function filterOnderwerpen() {
     tegel.style.display = tekst.includes(input) ? "flex" : "none";
   });
 }
+
+//regelblok
+// function verbergIntro() {
+//   document.getElementById("regelcontainer").style.display = "none";
+//   document.getElementById("stappencontainer").style.display = "block";
+
+  function verbergIntro() {
+    const intro = document.getElementById("regelcontainer");
+    const stappen = document.getElementById("stappencontainer");
+  
+    // Voeg klasse toe voor inklappen
+    intro.classList.add("hidden");
+  
+    // Wacht tot de animatie klaar is (500ms), dan pas tonen stappen
+    setTimeout(() => {
+      stappen.style.display = "block";
+      updateStap();
+    }, 500);
+  }
+
+  // Start eventueel met stap 1 actief:
+  const eersteStap = document.querySelector(".stap");
+  if (eersteStap) eersteStap.classList.add("active");
+
+  // Als je werkt met voortgangsbalk:
+  if (typeof updateStap === "function") updateStap();

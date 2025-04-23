@@ -13,14 +13,26 @@
 
 
 
-<div class="container">
+<div class="container collapse tooltip" id="regelcontainer">
+    <div class="regelblok">
+        <h5>Belangrijke info voor je start:</h5>
+        <div class="regel-lijst">
+          <p>Je kan opmerkingen toevoegen tot 5 dagen in het verleden.</p>
+          <p>Op het einde van de maand is dit beperkt tot 2 dagen.</p>
+          <p>Het niet nemen van pauze vereist een opmerking op de dag zelf.</p>
+          <!-- <p>Bij problemen neem je contact op met uw teamcoach</p> -->
+        </div>
+        <button class="btn groot" onclick="verbergIntro()">Ik begrijp het</button>
+      </div>
+</div>
 
+<div class="container" id="stappencontainer" style="display: none;">
     <div class="voortgang">
         <div id="voortgang-tekst"></div>
         <div class="voortgang-balk">
           <div id="voortgang-vulling"></div>
         </div>
-      </div>  
+    </div>
 
     <!-- Stap 1 -->
     <div class="stap active" id="stap1">
@@ -56,7 +68,7 @@
             <source src="../media/opmerking.mp4" type="video/mp4">
             Je browser ondersteunt geen video.
         </video>
-        <p>Opmerkingen kunnen tot 5 dagen in het verleden toegevoegd worden</p>
+        <!-- <p>Opmerkingen kunnen tot 5 dagen in het verleden toegevoegd worden</p> -->
     </div>
 
     <div class="stap" id="stap5">
@@ -73,14 +85,11 @@
     <!-- Navigatieknoppen -->
     <button id="vorigeBtn" class="btn" onclick="vorigeStap()" disabled>Vorige</button>
     <button id="volgendeBtn" class="btn" onclick="volgendeStap()">Volgende</button>
-    
-</div>
+    </div>
+
 <div class="reset">
     <button class="btn" onclick="resetHandleiding()">Herstart</button>
 </div>
-
-
-
 
 <script src="../script.js"></script>
 
