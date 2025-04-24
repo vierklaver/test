@@ -181,8 +181,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 180px;
+    width: 200px;
+    height: 150px;
     background-color: white;
     color: #333;
     text-decoration: none;
@@ -199,12 +199,12 @@ header {
 }
 
 .tegel .icoon {
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
 .tegel .titel {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
 }
