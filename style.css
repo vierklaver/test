@@ -165,6 +165,8 @@ h1, h2, h5, p, .titel, .subtitel, .voortgang {
 
 header {
     margin-bottom: 40px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Moderne tegelstijl */
@@ -326,6 +328,7 @@ header {
   margin: 10px auto;
   display: block;
   font-size: 16px;
+  text-align: center;
   border: 1px solid var(--border-color);
   border-radius: 6px;
 }
