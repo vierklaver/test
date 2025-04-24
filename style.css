@@ -412,8 +412,12 @@ body.dark-theme .regelblok {
 }
 
 .tooltip {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 5 / 3;
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .tooltip-text {
@@ -426,7 +430,7 @@ body.dark-theme .regelblok {
   padding: 5px 10px;
   position: absolute;
   z-index: 1;
-  top: 110%; /* boven het element */
+  top: 105%; 
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
