@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planpoint - Gekoppelde Activiteiten</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body id="activiteiten">
+
+<button class="index-button" onclick="terug()">Terug naar overzicht</button>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Wissel Thema</button>
+
+
+<div class="container collapse" id="regelcontainer">
+    <div class="regelblok">
+        <h4>Belangrijke informatie</h4>
+        <div class="regel-lijst">
+          <p>Hier voorzien we uitleg over het aanduiden van maaltijden.</p>
+          <p>Je bent zelf verantwoordelijk voor het bijhouden hiervan.</p>
+          <p></p>
+    </div>
+        <button class="btn" onclick="verbergIntro()">Ik begrijp het</button>
+      </div>
+</div>
+
+<div class="container" id="stappencontainer" style="display: none;">
+    <div class="voortgang">
+        <div id="voortgang-tekst"></div>
+        <div class="voortgang-balk">
+          <div id="voortgang-vulling"></div>
+        </div>
+    </div>
+
+    <!-- Stap 1 -->
+    <div class="stap active" id="stap1">
+            <h5>Klik op 'Mijn Registraties'</h5>
+            <div>
+            <img src="../media/mijnreg.png" class="media img-minimum" alt="Stap 1 Screenshot">
+            </div>
+            <button class="btn toggle-video-btn" onclick="toggleVideo(this)">▶ Meer uitleg</button>
+            <div class="collapse-video">
+                <video class="media" controls>
+                    <source src="../media/mijn_reg.mp4" type="video/mp4">
+                    Je browser ondersteunt geen video.
+                </video>
+            </div>
+    </div>
+  
+
+    <!-- Stap 2 -->
+    <div class="stap" id="stap2">
+        <h5>Zorg dat de datum correct staat</h5>
+        <video class="media" controls>
+            <source src="../media/dataselect.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <!-- Stap 3 -->
+    <div class="stap" id="stap3">
+        <h5>Navigeer naar de dag</h5>
+        <video class="media" controls>
+            <source src="../media/actdag.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <!-- Stap 4 -->
+    <div class="stap" id="stap4">
+        <h5>Klik op de dag en selecteer de gekoppelde activiteiten</h5>
+        <video class="media" controls>
+            <source src="../media/actclick.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+        <p>Klik hiervoor op het 🔗-icoon</p>
+    </div>
+
+    <div class="stap" id="stap5">
+        <h5>Duid de correcte maaltijd aan</h5>
+        <video class="media" controls>
+            <source src="../media/mltd.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+       </div>
+
+    <div class="stap" id="stap6">
+        <h5>Bewaar de wijziging</h5>
+        <video class="media" controls>
+            <source src="../media/mltdsave.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+
+    <div class="stap" id="stap7">
+        <div class="succes-bericht">
+            <h2>✅ De activiteit is opgeslagen</h2>
+            <!-- <p></p> -->
+            <div class="actie-knoppen">
+                <a href="index.html" class="btn">Terug naar startpagina</a>
+                <a href="#" onclick="resetHandleiding()" class="btn">Opnieuw bekijken</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigatieknoppen -->
+    <button id="vorigeBtn" class="btn" onclick="vorigeStap()" disabled>Vorige</button>
+    <button id="volgendeBtn" class="btn" onclick="volgendeStap()">Volgende</button>
+    </div>
+
+<div class="reset">
+    <button class="btn" onclick="resetHandleiding()">Herstart</button>
+</div>
+
+<script src="../script.js"></script>
+
+</body>
+</html>
